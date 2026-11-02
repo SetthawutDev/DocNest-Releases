@@ -78,6 +78,23 @@ If you trust the downloaded application and have verified its checksum:
 
 Do not disable Gatekeeper globally.
 
+## Connect to Notion
+
+DocNest requires a Notion integration token to synchronize your pages.
+
+1. Open **Notion → Settings → Connections**.
+2. Enable **Developer Mode** and open **Personal access tokens** from the developer section in your sidebar.
+3. Select **New connection**, give it a name, and choose your workspace.
+4. Copy the integration token from the connection's **•••** menu and paste it into DocNest.
+5. Open the Notion page you want to sync. Select **••• → More → Connections → Add connections** and choose your integration.
+
+**Important:** Keep your integration token private. Make sure the connection has permission to access the pages you want to synchronize.
+
+**Official Notion documentation:**
+
+- [Create a Notion API connection](https://www.notion.com/help/create-integrations-with-the-notion-api)
+- [Manage connections and page access](https://www.notion.com/help/add-and-manage-connections-with-the-api)
+
 ## Verify Your Download
 
 The published ARM64 installer has the following SHA-256 checksum:
