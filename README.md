@@ -16,7 +16,18 @@ Keep writing in Notion while DocNest maintains a local, read-only copy of your d
 - **Multiple Projects** — Manage and synchronize several Notion projects independently.
 - **Background Operation** — Continue synchronization while the application runs in the background.
 - **Local Documentation Access** — Browse synchronized files using Finder, editors, and other local applications.
-- **Read-only CLI** — Search documentation and retrieve synchronized pages through terminal commands.
+
+## Synchronization Modes
+
+DocNest provides three synchronization modes. When Automatic Sync is enabled, their default intervals are:
+
+| Mode | What it does | Default automatic interval |
+|---|---|---|
+| **Incremental** | Checks synchronized pages for changes and updates changed content and assets. New child pages found in changed pages are also synchronized. | Every **5 minutes** |
+| **Refresh Hierarchy** | Rediscovers the Notion page hierarchy, updates the local folder structure, and synchronizes new or changed pages. | Every **15 minutes** |
+| **Full Sync** | Performs a complete synchronization of the project hierarchy, page content, and assets to reconcile the local copy with Notion. | Every **24 hours** |
+
+You can also run each mode manually.
 
 ## How It Works
 
@@ -90,7 +101,6 @@ The computed checksum must match the value above.
 - Intel-based Macs are not supported by the current release.
 - Automatic application updates are not yet available.
 - New versions must be installed manually.
-- AI-agent CLI integration has not yet been manually verified.
 - DocNest requires a valid Notion connection to retrieve remote content.
 
 ## Feedback and Issues
