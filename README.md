@@ -6,7 +6,7 @@ DocNest is a macOS desktop application that mirrors Notion pages and their asset
 
 Keep writing in Notion while DocNest maintains a local, read-only copy of your documentation.
 
-[**Download DocNest v1.0.0**](https://github.com/SetthawutDev/DocNest-Releases/releases/tag/v1.0.0)
+[**Download DocNest v1.0.1**](https://github.com/SetthawutDev/DocNest-Releases/releases/tag/v1.0.1)
 
 ## Features
 
@@ -15,6 +15,7 @@ Keep writing in Notion while DocNest maintains a local, read-only copy of your d
 - **Three Synchronization Modes** — Incremental, Refresh Hierarchy, and Full Sync.
 - **Multiple Projects** — Manage and synchronize several Notion projects independently.
 - **Background Operation** — Continue synchronization while the application runs in the background.
+- **Update Checking** — Check official GitHub releases from Settings. Download and install updates manually.
 - **Local Documentation Access** — Browse synchronized files using Finder, editors, and other local applications.
 
 ## Synchronization Modes
@@ -41,31 +42,33 @@ You can also run each mode manually.
 
 ## Download
 
-### DocNest v1.0.0
+### DocNest v1.0.1
 
 | Requirement | Support |
 |---|---|
 | Operating system | macOS 15.0 or later |
 | Processor | Apple Silicon (ARM64) |
 | Distribution | DMG installer |
-| Code signing | Unsigned |
-| Automatic updates | Not available in v1.0.0 |
+| Code signing | Ad-hoc signed; not Apple notarized |
+| Update checks | In-app GitHub checks; installation remains manual |
 
-[**Download for macOS (Apple Silicon)**](https://github.com/SetthawutDev/DocNest-Releases/releases/download/v1.0.0/DocNest-1.0.0-arm64-local.dmg)
+[**Download for macOS (Apple Silicon)**](https://github.com/SetthawutDev/DocNest-Releases/releases/download/v1.0.1/DocNest-1.0.1-arm64-local.dmg)
 
 [View all releases](https://github.com/SetthawutDev/DocNest-Releases/releases)
 
 ## Installation
 
-1. Download the DMG installer.
-2. Open the downloaded DMG.
-3. Drag **DocNest.app** into the **Applications** folder.
-4. Open DocNest from Applications.
-5. Connect your Notion integration and configure your local storage location.
+1. Download the ARM64 DMG and `SHA256SUMS.txt` from the same release, then [verify the checksum](#verify-your-download).
+2. If upgrading, quit DocNest normally and allow synchronization to stop. Back up important settings and mirrors.
+3. Open the downloaded DMG and drag **DocNest.app** into **Applications**, replacing the older app when prompted.
+4. Eject the DMG and open DocNest from Applications. Follow the security approval steps below if macOS blocks it.
+5. Confirm Settings shows **1.0.1**. Existing users should keep their settings, mirrors, and Keychain items and confirm their projects before resuming synchronization. New users can connect Notion and select a storage location.
+
+**V1.0.0 users must manually install V1.0.1 to gain update checking.** Later updates also require manual installation; DocNest does not automatically download or replace the application.
 
 ### Important: macOS Security Notice
 
-DocNest v1.0.0 is currently **unsigned and not notarized by Apple**.
+DocNest v1.0.1 is **ad-hoc signed and not notarized by Apple**. It has no Developer ID signature. Ad-hoc signing provides bundle integrity without Apple developer trust.
 
 macOS Gatekeeper may prevent the application from opening automatically.
 
@@ -74,7 +77,9 @@ If you trust the downloaded application and have verified its checksum:
 1. Attempt to open DocNest normally.
 2. Open **System Settings → Privacy & Security**.
 3. Find the blocked application notice.
-4. Select **Open Anyway** and follow the macOS confirmation prompts.
+4. If offered, select **Open Anyway** and follow the macOS confirmation prompts.
+
+If Open Anyway is unavailable or the application still cannot open, report the issue with your macOS version. A clean-account, quarantined browser-download installation has not yet been verified.
 
 Do not disable Gatekeeper globally.
 
@@ -100,24 +105,31 @@ DocNest requires a Notion integration token to synchronize your pages.
 The published ARM64 installer has the following SHA-256 checksum:
 
 ```text
-933d3dc4b8bb8e36cc50bc5d6e790a3854382c4b196ff2e225fe1bfc63dec7f3
+77d70f4b8108f6ec862ad84fd4a06e9f16399453dad78c8aa6fbefed0829b226
 ```
 
 Verify it using Terminal:
 
 ```bash
-shasum -a 256 ~/Downloads/DocNest-1.0.0-arm64-local.dmg
+shasum -a 256 ~/Downloads/DocNest-1.0.1-arm64-local.dmg
 ```
 
-The computed checksum must match the value above.
+The computed checksum must match the value above. If you downloaded both release assets into Downloads, you can also verify the checksum file:
 
-[Download checksum file](https://github.com/SetthawutDev/DocNest-Releases/releases/download/v1.0.0/SHA256SUMS.txt)
+```bash
+cd ~/Downloads
+shasum -a 256 -c SHA256SUMS.txt
+```
+
+Require `DocNest-1.0.1-arm64-local.dmg: OK` before installing.
+
+[Download checksum file](https://github.com/SetthawutDev/DocNest-Releases/releases/download/v1.0.1/SHA256SUMS.txt)
 
 ## Known Limitations
 
 - Intel-based Macs are not supported by the current release.
-- Automatic application updates are not yet available.
-- New versions must be installed manually.
+- Update checking is available in Settings; new versions must be downloaded and installed manually.
+- Public GitHub API limits and offline conditions can prevent a check without blocking synchronization.
 - DocNest requires a valid Notion connection to retrieve remote content.
 
 ## Feedback and Issues
@@ -136,4 +148,4 @@ The main application source code is maintained in a separate private repository.
 
 ---
 
-**DocNest v1.0.0 — First macOS Release**
+**DocNest v1.0.1 — Reliability fixes and update checking**
