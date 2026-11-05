@@ -4,9 +4,11 @@
 
 SettDoc is a macOS application that synchronizes Notion pages to local Markdown files for offline access, documentation management, and AI-powered developer workflows.
 
-Keep writing in Notion while SettDoc maintains a local, read-only copy of your documentation. Previously published releases retain their historical DocNest names.
+Keep writing in Notion while SettDoc maintains a local, read-only copy of your documentation.
 
-[**Download SettDoc v1.0.3**](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.3)
+Version **2.0.0** marks the official major rebranding milestone. This is a version-only update from v1.0.3, with unchanged application behavior, bundle identifier, profile directory, Keychain service and local mirror paths. No migration is required. All historical releases remain available.
+
+[**Download SettDoc v2.0.0**](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v2.0.0)
 
 ## Features
 
@@ -54,7 +56,7 @@ You can also run each mode manually.
 
 ## Download
 
-### SettDoc v1.0.3
+### SettDoc v2.0.0
 
 | Requirement | Support |
 |---|---|
@@ -64,11 +66,11 @@ You can also run each mode manually.
 | Code signing | Ad-hoc signed; not Apple notarized |
 | Update checks | In-app GitHub checks; installation remains manual |
 
-[**Download for macOS (Apple Silicon)**](https://github.com/SetthawutDev/SettDoc-Releases/releases/download/v1.0.3/SettDoc-1.0.3-arm64-local.dmg)
+[**Download for macOS (Apple Silicon)**](https://github.com/SetthawutDev/SettDoc-Releases/releases/download/v2.0.0/SettDoc-2.0.0-arm64-local.dmg)
 
-[**Download for macOS (Intel)**](https://github.com/SetthawutDev/SettDoc-Releases/releases/download/v1.0.3/SettDoc-1.0.3-x64-local.dmg)
+[**Download for macOS (Intel)**](https://github.com/SetthawutDev/SettDoc-Releases/releases/download/v2.0.0/SettDoc-2.0.0-x64-local.dmg)
 
-[View all releases](https://github.com/SetthawutDev/SettDoc-Releases/releases) · Previous releases: [v1.0.2](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.2), [v1.0.1](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.1), [v1.0.0](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.0)
+[View all releases](https://github.com/SetthawutDev/SettDoc-Releases/releases) · Previous releases: [v1.0.3](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.3), [v1.0.2](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.2), [v1.0.1](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.1), [v1.0.0](https://github.com/SetthawutDev/SettDoc-Releases/releases/tag/v1.0.0)
 
 ## Installation
 
@@ -76,13 +78,13 @@ You can also run each mode manually.
 2. If upgrading, quit SettDoc normally and allow synchronization to stop. Back up important settings and mirrors.
 3. Open the downloaded DMG and drag **SettDoc.app** into **Applications**, replacing the older app when prompted.
 4. Eject the DMG and open SettDoc from Applications. Follow the security approval steps below if macOS blocks it.
-5. Confirm Settings shows **1.0.3**. Existing users should keep their settings, mirrors, and Keychain items and confirm their projects before resuming synchronization. New users can connect Notion and select a storage location.
+5. Confirm Settings shows **2.0.0**. Existing users should keep their settings, mirrors, and Keychain items and confirm their projects before resuming synchronization. New users can connect Notion and select a storage location.
 
 Updates require manual installation; SettDoc does not automatically download or replace the application.
 
 ### Important: macOS Security Notice
 
-SettDoc v1.0.3 is **ad-hoc signed and not notarized by Apple**. It has no Developer ID signature. Ad-hoc signing provides bundle integrity without Apple developer trust.
+SettDoc v2.0.0 is **ad-hoc signed and not notarized by Apple**. It has no Developer ID signature. Ad-hoc signing provides bundle integrity without Apple developer trust.
 
 macOS Gatekeeper may prevent the application from opening automatically.
 
@@ -125,15 +127,16 @@ shasum -a 256 -c SHA256SUMS.txt --ignore-missing
 Require your selected installer to report `OK`. The published installer checksums are:
 
 ```text
-d23c2ae25b6c96f6c61cb9761be24fcc3edab625d0c0fc539d3e9e969d223f8b  SettDoc-1.0.3-arm64-local.dmg
-5989da3a484abe4cabfe621394b878790133ed35d3ea57873f674ea7e07c63d3  SettDoc-1.0.3-x64-local.dmg
+e4c62cf4c982849403353f17a0db2d17be071440b50973f6e66376d246926d39  SettDoc-2.0.0-arm64-local.dmg
+b9305c10227d6c46568cee9ee39919cb6103591ea62185bafa60f7ee8aaaa29f  SettDoc-2.0.0-x64-local.dmg
 ```
 
-[Download checksum file](https://github.com/SetthawutDev/SettDoc-Releases/releases/download/v1.0.3/SHA256SUMS.txt)
+[Download checksum file](https://github.com/SetthawutDev/SettDoc-Releases/releases/download/v2.0.0/SHA256SUMS.txt)
 
 ## Known Limitations
 
 - Update checking is available in Settings; new versions must be downloaded and installed manually.
+- On Intel Macs, new versions are detected; use the release page to download the Intel installer. The existing in-app download action supports Apple Silicon only.
 - Public GitHub API limits and offline conditions can prevent a check without blocking synchronization.
 - SettDoc requires a valid Notion connection to retrieve remote content.
 
@@ -153,4 +156,4 @@ The main application source code is maintained in a separate private repository.
 
 ---
 
-**SettDoc v1.0.3 — New name, preserved project data and synchronization behavior**
+**SettDoc v2.0.0 — Official major rebranding milestone; unchanged v1.0.3 behavior and data**
